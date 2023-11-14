@@ -34,7 +34,9 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: _page(),
+        body: SingleChildScrollView(
+          child: _page(),
+        ),
       ),
     );
   }
@@ -64,15 +66,15 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const SizedBox(height: 50),
         Image.asset('assets/cuny2-removebg-preview.png'),
-        const SizedBox(height: 10),
         const Text(
-          "Welcome to the Wellness ",
+          "Welcome to the ",
           style: TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
         ),
         const Text(
-          "Hub",
+          "Wellness Hub",
           style: TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
         ),

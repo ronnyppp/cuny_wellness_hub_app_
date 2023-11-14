@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_phone_direct_caller: ^2.1.1
+  sqflite: ^2.3.0
+  path: ^1.8.3
+  intl: ^0.18.1
   url_launcher: ^6.2.1
 
 dev_dependencies:

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'entryscreen.dart';
 import 'counselorscreen.dart';
-import 'grouptherapy.dart';
+import 'supportgroupscreen.dart';
 import 'events.dart';
+import 'journalscreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,16 +15,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   Widget _categories(BuildContext context, {required String name}) {
     return Container(
-      height: 100,
+      height: 30,
       width: 120,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: [
-          const SizedBox(
-            height: 45,
-            width: 10,
-          ),
           Text(
             name,
             style: const TextStyle(
@@ -50,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Container(
             width: 190,
-            padding: const EdgeInsets.only(left: 20, top: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -92,16 +89,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Container(
               height: 130,
-              width: 150,
+              width: 130,
               decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
-                  ),
+                  borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      fit: BoxFit.fitHeight, image: NetworkImage(images)))),
+                      fit: BoxFit.cover,
+                      alignment: Alignment.center,
+                      image: NetworkImage(images)))),
         ],
       ),
     );
@@ -116,25 +110,11 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(colors: [Colors.blue, Colors.teal])),
-            height: 330,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            height: 240,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        hintText: 'Search...',
-                        prefixIcon: const Icon(
-                          Icons.search,
-                          color: Color(0xff0c3469),
-                        ),
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: BorderSide.none,
-                        )),
-                  ),
                   Container(
                     width: double.infinity,
                     height: 200,
@@ -187,24 +167,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 )
                               ]),
                         ),
-                        const SizedBox(
-                          width: 20,
-                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
                         Container(
-                          height: 150,
-                          width: 180,
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.fitHeight,
+                            height: 150,
+                            width: 160,
+                            padding: const EdgeInsets.symmetric(horizontal: 7),
+                            decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                  fit: BoxFit.cover,
                                   image: NetworkImage(
                                       'https://bmccprodstroac.blob.core.windows.net/uploads/ported/bmcc-association/images/foundation.jpg')),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10),
-                                bottomLeft: Radius.circular(10),
-                              )),
-                        )
+                              borderRadius: BorderRadius.circular(10),
+                            )),
                       ],
                     ),
                   )
@@ -215,34 +189,63 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 Container(
-                  height: 100,
+                  height: 80,
                   width: double.infinity,
                   color: Colors.white,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        const Divider(
+                          color: Colors.black,
+                        ),
                         Row(
                           children: [
-                            const SizedBox(height: 20),
-                            const Divider(
-                              color: Colors.black,
-                            ),
                             _categories(
                               context,
                               name: '   Resources:',
                             ),
-                            _categories(
-                              context,
-                              name: 'Benefits of CBT',
+                            TextButton(
+                              onPressed: () async {
+                                var url = Uri.parse(
+                                    "https://positivepsychology.com/benefits-of-cbt/");
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(url);
+                                }
+                              },
+                              child: _categories(
+                                context,
+                                name: 'Benefits of CBT',
+                              ),
                             ),
-                            _categories(
-                              context,
-                              name: 'Mindfulness',
+                            TextButton(
+                              onPressed: () async {
+                                var url = Uri.parse(
+                                    "https://www.mentalhealth.org.uk/explore-mental-health/publications/how-look-after-your-mental-health-using-mindfulness");
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(url);
+                                }
+                              },
+                              child: _categories(
+                                context,
+                                name: 'Mindfulness',
+                              ),
                             ),
-                            _categories(
-                              context,
-                              name: 'Online Forums',
+                            TextButton(
+                              onPressed: () async {
+                                var url = Uri.parse(
+                                    "https://www.verywellmind.com/dialectical-behavior-therapy-1067402");
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(url);
+                                } else {
+                                  throw 'Could not launch url';
+                                }
+                              },
+                              child: _categories(
+                                context,
+                                name: 'Benefits of DBT',
+                              ),
                             ),
                           ],
                         ),
@@ -251,13 +254,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const Divider(
-                  color: Colors.black,
+                  color: Colors.grey,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: Column(
                     children: [
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -277,14 +280,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => JournalEntryList()));
+                                  builder: (context) => const JournalScreen()));
                         },
                         child: _bottomContainer(
                           color: const LinearGradient(
@@ -297,7 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       TextButton(
                         onPressed: () {
@@ -317,7 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       TextButton(
                         onPressed: () {
@@ -332,8 +335,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           images:
                               'https://bmccprodstroac.blob.core.windows.net/uploads/2023/10/ASAP-students-outside-calendar.jpg',
                           name: "School Events",
-                          title: "Connect and develop",
-                          subtitle: "meaningful connections",
+                          title: "Connect with",
+                          subtitle: "classmates",
                         ),
                       ),
                       const SizedBox(height: 20),

@@ -65,18 +65,14 @@ class CounselorScreen extends StatelessWidget {
             ),
           ),
           Container(
-              height: 160,
-              width: 140,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fitHeight, image: NetworkImage(images)),
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                ),
-              )),
+            height: 160,
+            width: 120,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover, image: NetworkImage(images)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
         ],
       ),
     );
@@ -97,17 +93,12 @@ class CounselorScreen extends StatelessWidget {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Column(
                 children: [
                   const SizedBox(height: 20),
                   TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const CounselorScreen()));
-                    },
+                    onPressed: () {},
                     child: _bottomContainer(
                         color: const LinearGradient(
                             colors: [Colors.blue, Colors.teal]),
@@ -173,7 +164,7 @@ class CounselorScreen extends StatelessWidget {
                         price: 100,
                         name: "Sarah McDermott",
                         title: "Phone Number: 218-864-2853",
-                        subtitle: "Email: smcdermott@bmcc.cuny.edu",
+                        subtitle: "Email: smcder@bmcc.cuny.edu",
                         call: TextButton(
                           onPressed: () {},
                           style: TextButton.styleFrom(

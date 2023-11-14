@@ -14,6 +14,7 @@ class EventsScreen extends StatelessWidget {
   }) {
     return Container(
       height: 240,
+      width: 700,
       decoration: BoxDecoration(
         gradient: color,
         borderRadius: BorderRadius.circular(10),
@@ -68,18 +69,14 @@ class EventsScreen extends StatelessWidget {
             ),
           ),
           Container(
-              height: 160,
-              width: 140,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fitHeight, image: NetworkImage(images)),
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
-                  topLeft: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
-                ),
-              )),
+            height: 160,
+            width: 120,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.fitHeight, image: NetworkImage(images)),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          )
         ],
       ),
     );
@@ -100,7 +97,7 @@ class EventsScreen extends StatelessWidget {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Column(
                 children: [
                   const SizedBox(height: 20),
