@@ -8,6 +8,7 @@ A Flutter app prototype designed to cater to students in CUNY colleges by offeri
 - **Support Groups:** Join or create support groups to collaborate with fellow students.
 - **Journaling:** Maintain a personal journal for tracking academic and personal progress.
 - **School Events:** Stay updated on upcoming school events and activities.
+- **Resources:** Easily access mental health articles on topics like mindfulness or CBT.
 
 ## Technologies Used
 
@@ -15,6 +16,7 @@ A Flutter app prototype designed to cater to students in CUNY colleges by offeri
 - [Dart](https://dart.dev/): The programming language used for Flutter app development.
 - [url_launcher](https://pub.dev/packages/url_launcher): A Flutter plugin for launching a URL.
 - [flutter_phone_direct_caller](https://pub.dev/packages/flutter_phone_direct_caller): A Flutter plugin that allows you to make direct phone calls from your app.
+- [intl](https://pub.dev/packages/intl): The Dart package for internationalization, which is used for handling date and time formatting in the app.
 
 ## Screenshots
 
