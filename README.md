@@ -23,3 +23,5 @@ A Flutter app prototype designed to cater to students in CUNY colleges by offeri
 <img width="186" alt="crop" src="https://github.com/ronnyppp/cuny_wellness_hub_app_/assets/123583213/983de573-89be-42a1-afc8-7335c41f868d">
 
 <img width="186" alt="cropped" src="https://github.com/ronnyppp/cuny_wellness_hub_app_/assets/123583213/5827a6b3-53ce-41f1-a51b-aa0dee6ab6a3">
+
+![Screenshot (37)](https://github.com/ronnyppp/cuny_wellness_hub_app_/assets/123583213/862ac257-a232-4dc5-86a7-e2c8a154be84)
