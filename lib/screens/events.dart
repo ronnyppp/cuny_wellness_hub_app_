@@ -23,7 +23,7 @@ class EventsScreen extends StatelessWidget {
         children: [
           Container(
             width: 190,
-            padding: const EdgeInsets.only(left: 20, top: 20),
+            padding: const EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -97,10 +97,9 @@ class EventsScreen extends StatelessWidget {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 children: [
-                  const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -130,9 +129,6 @@ class EventsScreen extends StatelessWidget {
                           ),
                         )),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -147,9 +143,6 @@ class EventsScreen extends StatelessWidget {
                       subtitle: "Date: September 6 - December 2",
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -161,9 +154,6 @@ class EventsScreen extends StatelessWidget {
                       title: "Location: Hudson Room 199 Chambers St., NY",
                       subtitle: "Schedule: November 2 3-5 pm",
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
                   ),
                   TextButton(
                     onPressed: () {},
@@ -195,7 +185,6 @@ class EventsScreen extends StatelessWidget {
                           ),
                         )),
                   ),
-                  const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -208,7 +197,6 @@ class EventsScreen extends StatelessWidget {
                       subtitle: "Date: November 3 10am-1pm",
                     ),
                   ),
-                  const SizedBox(height: 20),
                 ],
               ),
             ),

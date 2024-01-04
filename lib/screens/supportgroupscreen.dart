@@ -23,7 +23,7 @@ class GroupScreen extends StatelessWidget {
         children: [
           Container(
             width: 190,
-            padding: const EdgeInsets.only(left: 20, top: 20),
+            padding: const EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -92,10 +92,9 @@ class GroupScreen extends StatelessWidget {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 children: [
-                  const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -108,9 +107,6 @@ class GroupScreen extends StatelessWidget {
                       title: "Counselor: Dr. Peterson",
                       subtitle: "Schedule: Mondays 2-3pm on Zoom",
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
                   ),
                   TextButton(
                     onPressed: () {},
@@ -125,9 +121,6 @@ class GroupScreen extends StatelessWidget {
                       subtitle: "Schedule: Tuesdays 2-3pm on Zoom",
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -140,9 +133,6 @@ class GroupScreen extends StatelessWidget {
                       title: "Counselors: Dr. Burger and Dr. Mack",
                       subtitle: "Schedule: Mondays 3:30-4:30 on Zoom",
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
                   ),
                   TextButton(
                     onPressed: () {},
@@ -158,7 +148,6 @@ class GroupScreen extends StatelessWidget {
                       subtitle: "Schedule: Fridays 12-1pm on Zoom",
                     ),
                   ),
-                  const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -172,12 +161,10 @@ class GroupScreen extends StatelessWidget {
                       subtitle: "Schedule: Thursdays 2-3pm on Zoom",
                     ),
                   ),
-                  const SizedBox(height: 20),
                   const Text(
                     "Interested?",
                     style: TextStyle(color: Colors.blue, fontSize: 20),
                   ),
-                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

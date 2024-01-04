@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: const BoxDecoration(
                 gradient: LinearGradient(colors: [Colors.blue, Colors.teal])),
             height: 240,
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: const EdgeInsets.all(20),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -167,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 )
                               ]),
                         ),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
+                        const Padding(padding: EdgeInsets.all(10)),
                         Container(
                             height: 150,
                             width: 160,
@@ -257,10 +257,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.grey,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
-                      const SizedBox(height: 10),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -279,9 +278,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           subtitle: " health counselor",
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -298,9 +294,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: "Vent your thoughts",
                           subtitle: "and track mood",
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
                       ),
                       TextButton(
                         onPressed: () {
@@ -319,9 +312,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           subtitle: "and grow together",
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -339,7 +329,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           subtitle: "classmates",
                         ),
                       ),
-                      const SizedBox(height: 20),
                     ],
                   ),
                 ),

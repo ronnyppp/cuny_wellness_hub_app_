@@ -7,6 +7,10 @@ class JournalEntryDetailScreen extends StatelessWidget {
 
   JournalEntryDetailScreen(this.entry);
 
+  final Shader linearGradient = const LinearGradient(
+    colors: <Color>[Colors.blue, Colors.teal],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+
   @override
   Widget build(BuildContext context) {
     DateTime entryDate = DateTime.parse(entry.date);
@@ -26,16 +30,24 @@ class JournalEntryDetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Title: ${entry.title}',
-              style: const TextStyle(fontSize: 30),
+              entry.title,
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  foreground: Paint()..shader = linearGradient),
             ),
             Text(
-              'Date: ${formattedDate}',
-              style: const TextStyle(fontSize: 20),
+              formattedDate,
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  foreground: Paint()..shader = linearGradient),
             ),
+            const SizedBox(height: 15),
             Text(
-              'Content: ${entry.content}',
-              style: const TextStyle(fontSize: 20),
+              entry.content,
+              style: TextStyle(
+                  fontSize: 20, foreground: Paint()..shader = linearGradient),
             ),
           ],
         ),

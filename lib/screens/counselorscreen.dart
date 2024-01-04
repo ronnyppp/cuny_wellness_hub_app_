@@ -23,7 +23,7 @@ class CounselorScreen extends StatelessWidget {
         children: [
           Container(
             width: 190,
-            padding: const EdgeInsets.only(left: 20, top: 20),
+            padding: const EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -93,10 +93,9 @@ class CounselorScreen extends StatelessWidget {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -124,9 +123,6 @@ class CounselorScreen extends StatelessWidget {
                           ),
                         )),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -151,9 +147,6 @@ class CounselorScreen extends StatelessWidget {
                           ),
                         )),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   TextButton(
                     onPressed: () {},
                     child: _bottomContainer(
@@ -177,9 +170,6 @@ class CounselorScreen extends StatelessWidget {
                                 fontSize: 20, fontWeight: FontWeight.w500),
                           ),
                         )),
-                  ),
-                  const SizedBox(
-                    height: 20,
                   ),
                 ],
               ),

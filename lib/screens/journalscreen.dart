@@ -1,10 +1,9 @@
-// journal_screen.dart
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'detailedentryscreen.dart';
 import 'journalentryscreen.dart';
 import '../models/journalmodel.dart';
-import '../services/databasehelper.dart'; // Import the JournalDatabaseHelper
+import '../services/databasehelper.dart';
 
 class JournalScreen extends StatefulWidget {
   const JournalScreen({super.key});
@@ -24,6 +23,10 @@ class _JournalScreenState extends State<JournalScreen> {
     super.initState();
     _loadEntries();
   }
+
+  final Shader linearGradient = const LinearGradient(
+    colors: <Color>[Colors.blue, Colors.teal],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   Future<void> _loadEntries() async {
     entries = await dbHelper.getJournalEntries();
@@ -79,8 +82,16 @@ class _JournalScreenState extends State<JournalScreen> {
                       String formattedDate =
                           DateFormat('yyyy-MM-dd').format(entryDate);
                       return ListTile(
-                        title: Text(entry.title),
-                        subtitle: Text(formattedDate),
+                        title: Text(
+                          entry.title,
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              foreground: Paint()..shader = linearGradient),
+                        ),
+                        subtitle: Text(formattedDate,
+                            style: TextStyle(
+                                foreground: Paint()..shader = linearGradient)),
                         trailing: IconButton(
                           icon: const Icon(Icons.edit),
                           onPressed: () {
