@@ -5,14 +5,9 @@ import 'events.dart';
 import 'journalscreen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   Widget _categories(BuildContext context, {required String name}) {
     return Container(
       height: 30,
